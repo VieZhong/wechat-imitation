@@ -1,0 +1,98 @@
+$icon_width: 25px;
+
+
+.container {
+    width: 61px;
+    height: 100%;
+    background: linear-gradient(to bottom, #2a2a2a, #191919);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrap-top {
+    height: 218px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+
+    >div {
+        text-align: center;
+
+        img {
+            width: 56%;
+        }
+    }
+
+    .avatar {
+        width: 56%;
+        border-radius: 2px;
+    }
+}
+
+.wrap-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+
+    >div {
+        width: 80%;
+        text-align: center;
+
+        img {
+            width: 56%;
+        }
+    }
+}
+
+.chat {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/chat.svg);
+    background-size: $icon_width $icon_width;
+}
+
+.chat-active {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/chat-active.svg);
+    background-size: $icon_width $icon_width;
+}
+
+.contact {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/contact.svg);
+    background-size: $icon_width $icon_width;
+}
+
+.contact-active {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/contact-active.svg);
+    background-size: $icon_width $icon_width;
+}
+
+.box {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/box.svg);
+    background-size: $icon_width $icon_width;
+}
+
+.box-active {
+    display: block;
+    height: $icon_width;
+    width: $icon_width;
+    background-image: url(../../image/box-active.svg);
+    background-size: $icon_width $icon_width;
+}

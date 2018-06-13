@@ -1,0 +1,41 @@
+.container {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #dbd9d8;
+    width: 192px;
+    height: 24px;
+    border-radius: 4px;
+    
+    input {
+        background-color: transparent;
+        border: 1px;
+        height: 14px;
+        font-size: 12px;
+        outline: none;
+    }
+
+    img {
+        width: 12px;
+        margin: 0 6px;
+    }
+}
+
+.plus {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #dbd9d8;
+    line-height: 24px;
+    text-align: center;
+
+    img {
+        width: 14px;
+    }
+}
