@@ -1,3 +1,5 @@
+import * as reducerType from '../unit/reducerType';
+
 const defaultValue = [];
 
 for (let i = 0; i < 30; i++) {
@@ -13,6 +15,15 @@ for (let i = 0; i < 30; i++) {
 
 const dialogs = (state = defaultValue, action) => {
 	switch (action.type) {
+		case reducerType.UPDATE_DIALOGS:
+			const result = [];
+			state.forEach(({id, name, data}) => {
+				if(id == action.payload.id) {
+					data.push([action.payload.word, 0, action.payload.time])
+				}
+				result.push({id, name, data});
+			});
+			return result;
 		default: return state;
 	}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import UserList from '../../container/UserList';
-import Dialog from '../Dialog';
+import Dialog from '../../container/Dialog';
 
 import styles from './style';
 
