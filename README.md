@@ -5,3 +5,7 @@
 
 数据交互方面，准备用nodejs搭后台，以便可以交互，敬请期待。
 
+
+### 安装方法
+npm install
+npm run dev
