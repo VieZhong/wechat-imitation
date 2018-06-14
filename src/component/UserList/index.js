@@ -6,12 +6,14 @@ import Card from '../Card';
 import styles from './style';
 
 class UserList extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            selected: null
+            selected: null,
+            key: null
         }
         this.select = this.select.bind(this);
+        this.search = this.search.bind(this);
     }
 
     select(id) {
@@ -21,13 +23,19 @@ class UserList extends React.Component {
         this.props.changeDialog(id);
     }
 
+    search(key) {
+        this.setState({ key });
+    }
+
     render() {
-        const { selected } = this.state;
+        const { selected, key } = this.state;
         const { dialogs } = this.props;
+        const result = key ? dialogs.filter(({name}) => name.includes(key)) : dialogs;
+        
         return <div className={styles['container']}>
-            <Search />
+            <Search search={this.search} />
             <div className={styles['dialogs']}>
-                {dialogs.map(dialog => <Card key={dialog.id} data={dialog} actived={selected == dialog.id} handleClick={() => this.select(dialog.id)} />)}
+                {result.map(dialog => <Card key={dialog.id} data={dialog} actived={selected == dialog.id} handleClick={() => this.select(dialog.id)} />)}
             </div>
         </div>
     }

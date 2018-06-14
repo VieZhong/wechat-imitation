@@ -6,11 +6,14 @@ class Dialog extends React.Component {
     constructor() {
         super();
         this.state = {
-            message: ''
+            message: '',
+            isEditing: false
         }
         this.write = this.write.bind(this);
         this.send = this.send.bind(this);
         this.onKeyDown = this.onKeyDown.bind(this);
+        this.onFocus = this.onFocus.bind(this);
+        this.onBlur = this.onBlur.bind(this);
     }
 
     write({target}) {
@@ -24,7 +27,6 @@ class Dialog extends React.Component {
             e.preventDefault();
             this.send();
         }
-
     }
 
     send() {
@@ -37,11 +39,23 @@ class Dialog extends React.Component {
         }
     }
 
+    onFocus() {
+        this.setState({
+            isEditing: true
+        })
+    }
+
+    onBlur() {
+        this.setState({
+            isEditing: false
+        })
+    }
+
     render() {
-        const { message } = this.state;
+        const { message, isEditing } = this.state;
         const { hidden } = this.props;
-        return hidden ? <div></div> : <div className={styles['container']}>
-            <textarea name="text" onChange={this.write} value={message} onKeyDown={this.onKeyDown}></textarea>
+        return hidden ? <div></div> : <div className={styles['container']} style={{backgroundColor: isEditing ? '#fff' : 'transparent'}}>
+            <textarea name="text" onChange={this.write} value={message} onKeyDown={this.onKeyDown} onFocus={this.onFocus} onBlur={this.onBlur}></textarea>
             <button onClick={this.send}>发送(S)</button>
         </div>
     }
