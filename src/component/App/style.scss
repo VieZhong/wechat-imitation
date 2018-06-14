@@ -1,4 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+/*::-webkit-scrollbar-thumb:window-inactive {
+    background-color: transparent;
+}*/
 
 .frame {
     height: 788px;

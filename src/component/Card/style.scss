@@ -1,0 +1,51 @@
+
+.container {
+    display: flex;
+    padding: 12px;
+    height: 38px;
+    user-select: none;
+}
+
+.container:hover {
+    background-color: #d8d8d8;
+}
+
+.active, .active:hover {
+    background-color: #c4c4c4;
+}
+
+.container-right {
+    position: relative;
+    flex: 1;
+    padding-left: 10px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}
+
+.name {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.message {
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
+}
+
+.time {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    color: #999;
+}
