@@ -3,9 +3,11 @@ import {
     connect
 } from 'react-redux';
 
-import { updateDialogs } from '../../action';
+import { updateDialogs, getDialogs } from '../../action';
 
 import Dialog from '../../component/Dialog';
+
+const ws = new WebSocket('ws://localhost:8082');
 
 const mapStateToProps = state => {
     const dialogId = state.get('currentDialogId');
@@ -18,7 +20,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     commit: id => (word, time) => {
-        dispatch(updateDialogs({id, word, time}))
+        dispatch((dispatch, getState) => {
+            dispatch(updateDialogs({id, word, time}));
+            ws.send(JSON.stringify({id, word, time, by: getState().get('selfInfo').id}));
+        });
     }
 })
 

@@ -2,7 +2,8 @@ import avatar_url from '../image/data/me.jpg';
 
 const defaultValue = {
     avatar_url,
-    name: '小夫'
+    name: '小夫',
+    id: 'xiaofu'
 }
 
 const selfInfo = (state = defaultValue, action) => {
