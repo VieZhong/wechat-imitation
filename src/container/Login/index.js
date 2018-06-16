@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
             window.sessionStorage.setItem("userInfo", JSON.stringify(data));
             ws.send(JSON.stringify({
                 type: 'connection',
-                by: JSON.parse(data.id)
+                by: data.id
             }));
         });
     }
