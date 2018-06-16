@@ -2,8 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlwebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const OpenBrowerPlugin = require('open-browser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -61,11 +59,6 @@ module.exports = {
         }]
     },
 
-    // externals: {
-    //     'react': 'React',
-    //     'react-dom': 'ReactDOM'
-    // },
-
     mode: "production",
 
     optimization: {
@@ -84,26 +77,12 @@ module.exports = {
     },
 
     plugins: [
-        // new CopyWebpackPlugin([{
-        //     from: 'node_modules/react/dist/react.min.js',
-        //     to: 'lib/'
-        // }, {
-        //     from: 'node_modules/react-dom/dist/react-dom.min.js',
-        //     to: 'lib/'
-        // }]),
         new HtmlwebpackPlugin({
             filename: 'index.html',
             template: 'src/index.ejs',
             title: '模拟微信电脑版客户端',
             favicon: path.resolve(__dirname, "src/image/favicon.ico")
         }),
-        // new HtmlWebpackIncludeAssetsPlugin({
-        //     assets: [
-        //         'lib/react.min.js',
-        //         'lib/react-dom.min.js'
-        //     ],
-        //     append: false
-        // }),
         new OpenBrowerPlugin({
             url: host
         }),

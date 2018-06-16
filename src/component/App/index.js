@@ -1,11 +1,15 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import {
     BrowserRouter,
     Switch,
     Route,
     Redirect
 } from 'react-router-dom'
+
+import { updateSelfInfo } from '../../action';
 
 import Chat from '../../container/Chat';
 import Nav_Container from '../../container/Nav';
@@ -15,13 +19,20 @@ import Login from '../../container/Login';
 
 import styles from './style';
 
+const mapDispatchToProps = dispatch => ({
+    updateSelfInfo: (info) => {
+        dispatch(updateSelfInfo(info))
+    }
+});
+
 class Frame extends React.Component {
 
-    componentWillMount() {
-        const userId = window.sessionStorage.getItem('userId');
-        if(!userId) {
+    componentDidMount() {
+        const userInfo = JSON.parse(window.sessionStorage.getItem('userInfo'));
+        if(!userInfo.id) {
             this.props.history.push('/login');
         }
+        this.props.updateSelfInfo(userInfo);
     }
 
     render() {    
@@ -37,11 +48,11 @@ class Frame extends React.Component {
 }
 
 
-const App = () => <BrowserRouter  basename="/communication">
+const App = () => <BrowserRouter basename={process.env.NODE_ENV == "production" ? "/communication" : "/"}>
     <Switch>
         <Redirect exact from="/" to="/login" />
         <Route from="/login" component={Login} />
-        <Route component={Frame} />
+        <Route component={connect(null, mapDispatchToProps)(Frame)} />
     </Switch>
 </BrowserRouter>;
 

@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
     login: info => {
         return dispatch(login(info)).then(({data}) => {
             dispatch(updateSelfInfo(data));
-            window.sessionStorage.setItem("userId", data.id);
+            window.sessionStorage.setItem("userInfo", JSON.stringify(data));
         });
     }
 });
