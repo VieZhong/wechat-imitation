@@ -21,9 +21,11 @@
 `
 npm install
 `
+
 运行时，需要把src/unit/constant.js中的hostname修改成localhost，并需要后台配合进行交互。
 
 本人github写了一个后台的例子，可供参考：https://github.com/VieZhong/back_end_koajs
+
 `
 npm run dev
 `
