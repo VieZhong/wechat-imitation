@@ -5,6 +5,9 @@
 
 数据交互方面，准备用nodejs搭后台，以便可以交互，敬请期待。
 
+### 在线例子
+
+点击http://viezhong.top/communication
 
 ### 安装并运行
 建议nodeJS版本在8.2.1及以上
