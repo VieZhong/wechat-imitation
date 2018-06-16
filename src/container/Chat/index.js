@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => {
     return {
         getDialogs: () => {
             dispatch((dispatch, getState) => {
-                const { id } = getState().get('selfInfo');
+                const id = getState().get('selfInfo').id || window.sessionStorage.getItem('userId');
                 return axios
                             .get(`/api/chat/${id}/dialogs`)
                             .then(({data}) => {

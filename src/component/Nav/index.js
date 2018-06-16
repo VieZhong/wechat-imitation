@@ -11,13 +11,13 @@ class Nav extends React.Component {
     constructor() {
         super();
         this.state = {
-            active: window.location.pathname.substring(1) || 'chat'
+            active: window.location.pathname.split('/').pop()
         }
         this.changeTag = this.changeTag.bind(this);
 
         window.addEventListener('popstate', () => {
             this.setState({
-                active: window.location.pathname.substring(1) || 'chat'
+                active: window.location.pathname.split('/').pop()
             });
         }, false);
     }
