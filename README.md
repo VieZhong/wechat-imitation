@@ -8,6 +8,7 @@
 ### 在线例子
 
 点击http://viezhong.top/communication
+测试账号：vie，密码：123456
 
 ### 安装并运行
 建议nodeJS版本在8.2.1及以上
