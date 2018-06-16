@@ -7,7 +7,7 @@ import { updateDialogs, getDialogs } from '../../action';
 
 import Dialog from '../../component/Dialog';
 
-const ws = new WebSocket('ws://localhost:8082');
+const ws = new WebSocket('ws://viezhong.top:8082');
 
 const mapStateToProps = state => {
     const dialogId = state.get('currentDialogId');
