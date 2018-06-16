@@ -7,7 +7,7 @@
 
 ### 在线例子
 
-点击http://viezhong.top/communication
+点击 http://viezhong.top/communication 进行试玩（未做兼容性测试，请在Chrome或Firefox上打开）。
 
 测试账号1：vie，密码：123456 （昵称：旧日憾事）
 
