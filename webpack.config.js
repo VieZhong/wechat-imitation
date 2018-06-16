@@ -61,7 +61,11 @@ module.exports = {
 
     devServer: {
         proxy: { // proxy URLs to backend development server
-            '/api/chat': 'http://localhost:8081'
+            '/api/chat': 'http://localhost:8081',
+            // '/api/communication': {
+            //     target: "ws://localhost:8081",
+            //     ws: true
+            // }
         },
         contentBase: [path.join(__dirname, "dist")],
         compress: true, // enable gzip compression

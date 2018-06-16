@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import { updateSelfInfo } from '../../action';
 
+import { ws } from '../../unit/constant';
+
 import Login from '../../component/Login';
 
 function login(info) {
@@ -17,6 +19,10 @@ const mapDispatchToProps = dispatch => ({
         return dispatch(login(info)).then(({data}) => {
             dispatch(updateSelfInfo(data));
             window.sessionStorage.setItem("userInfo", JSON.stringify(data));
+            ws.send(JSON.stringify({
+                type: 'connection',
+                by: JSON.parse(data.id)
+            }));
         });
     }
 });

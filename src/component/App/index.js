@@ -9,7 +9,9 @@ import {
     Redirect
 } from 'react-router-dom'
 
-import { updateSelfInfo } from '../../action';
+import { updateSelfInfo, receiveMessage } from '../../action';
+
+import { ws } from '../../unit/constant';
 
 import Chat from '../../container/Chat';
 import Nav_Container from '../../container/Nav';
@@ -22,6 +24,9 @@ import styles from './style';
 const mapDispatchToProps = dispatch => ({
     updateSelfInfo: (info) => {
         dispatch(updateSelfInfo(info))
+    },
+    receive: message => {
+        dispatch(receiveMessage(message));
     }
 });
 
@@ -33,6 +38,10 @@ class Frame extends React.Component {
             this.props.history.push('/login');
         }
         this.props.updateSelfInfo(userInfo);
+
+        ws.onmessage = ({data}) => {
+            this.props.receive(JSON.parse(data));
+        };
     }
 
     render() {    

@@ -17,6 +17,17 @@ const dialogs = (state = defaultValue, action) => {
 				}
 			});
 			return result;
+		case reducerType.RECEIVE_MESSAGE:
+			const res = [];
+			state.forEach(({id, name, data}) => {
+				if(id == action.payload.by) {
+					data.push([action.payload.word, 1, action.payload.time]);
+					res.unshift({id, name, data});
+				} else {
+					res.push({id, name, data});	
+				}
+			});
+			return res;
 		default: return state;
 	}
 }
