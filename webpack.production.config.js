@@ -7,7 +7,7 @@ const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plug
 const OpenBrowerPlugin = require('open-browser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const host = 'http://localhost:8081/communication';
+const host = 'http://viezhong.top/communication';
 
 module.exports = {
     entry: {
