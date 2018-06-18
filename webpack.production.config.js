@@ -13,7 +13,7 @@ module.exports = {
     },
 
     output : {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "../back_end_koajs/apps/communication"),
         filename: '[name].js',
         publicPath: host
     },

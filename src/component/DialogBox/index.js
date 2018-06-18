@@ -9,9 +9,13 @@ class DialogBox extends React.Component {
         super();
     }
 
+    componentDidUpdate() {
+        this.dom.scrollTop = this.dom.scrollHeight;
+    }
+
     render() {
         const { data, self_avatar_url } = this.props;
-        return <div className={styles['container']}>
+        return <div className={styles['container']} ref={dom => {this.dom = dom}}>
             {data && data.map(([word, tag, time]) => {
                 if(!tag) {
                     return <div className={styles['my-sentence']} key={time}>
