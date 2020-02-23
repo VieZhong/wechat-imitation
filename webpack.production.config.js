@@ -5,7 +5,7 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');
 const OpenBrowerPlugin = require('open-browser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const host = 'http://viezhong.top/communication';
+const host = 'https://viezhong.top/communication';
 
 module.exports = {
     entry: {
